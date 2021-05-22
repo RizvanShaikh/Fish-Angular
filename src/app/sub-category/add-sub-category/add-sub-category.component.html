@@ -1,0 +1,67 @@
+<div class="content">
+    <header class="page-header">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h1 class="separator">Add {{pageName|titlecase}}</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-content container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+    
+                <form [formGroup]="addForm"  (ngSubmit)="submitForm()" >
+                 
+                  <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-7">
+                                <div class="form-row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Subcategory</label>
+                                            <input [formControl]="addForm.controls['subcategory_title']"  
+                                                class="form-control" 
+                                                type="text" 
+                                                placeholder="Enter subcategory">
+                                            </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Category</label>
+                                         
+                                            <ng-select  
+                                            [formControl]="addForm.controls['category_id']"
+                                            [items] = "categoryDropdown"
+                                            bindValue = "id"
+                                            bindLabel = "title"
+                                            placeholder="Select category">
+                                            </ng-select>
+  
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="card-footer bg-light text-center">
+                        <a [routerLink]="[backUrl]" class="btn btn-secondary clear-form">Cancel</a>
+                        <button type="submit" class="btn btn-primary load-button m-l-10"> 
+                            <a class="submit-blue">	Submit </a>
+                        </button>
+                    </div>
+                  </div>
+                  
+                  </form>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

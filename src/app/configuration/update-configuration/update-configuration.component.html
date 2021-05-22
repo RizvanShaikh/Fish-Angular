@@ -1,0 +1,167 @@
+<div class="content">
+    <header class="page-header">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h1 class="separator">Update {{pageName|titlecase}}</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-content container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+    
+                <form [formGroup]="addForm"  (ngSubmit)="submitForm()" >
+                 
+                  <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-7">
+                                <div class="form-row">
+                                  
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>App Name</label>
+                                            <input [formControl]="addForm.controls['app_name']"  
+                                                class="form-control" 
+                                                type="text" 
+                                                >
+                                            </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Currency</label>
+                                         
+                                            <ng-select  
+                                            [formControl]="addForm.controls['currency']"
+                                            [items] = "currencyDropdown"
+                                            bindValue = "value"
+                                            bindLabel = "label"
+                                            >
+                                            </ng-select>
+  
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Contact No</label>
+                                            <input [formControl]="addForm.controls['contact_no']"  
+                                                class="form-control" 
+                                                type="text" 
+                                                >
+                                            </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input [formControl]="addForm.controls['email']"  
+                                                class="form-control" 
+                                                type="text" 
+                                                >
+                                            </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input [formControl]="addForm.controls['address']"  
+                                                class="form-control" 
+                                                type="text" 
+                                                >
+                                            </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Timing</label>
+                                            <input [formControl]="addForm.controls['timing']"  
+                                                class="form-control" 
+                                                type="text" 
+                                                >
+                                            </div>
+                                    </div>
+
+
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Facebook Link</label>
+                                            <input [formControl]="addForm.controls['facebook_link']"  
+                                                class="form-control" 
+                                                type="text" 
+                                                >
+                                            </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Twitter Link</label>
+                                            <input [formControl]="addForm.controls['twitter_link']"  
+                                                class="form-control" 
+                                                type="text" 
+                                                >
+                                            </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Youtube Link</label>
+                                            <input [formControl]="addForm.controls['youtube_link']"  
+                                                class="form-control" 
+                                                type="text" 
+                                                >
+                                            </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Linkedin Link</label>
+                                            <input [formControl]="addForm.controls['linked_in_link']"  
+                                                class="form-control" 
+                                                type="text" 
+                                                >
+                                            </div>
+                                    </div>
+
+
+                                    
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="card-footer bg-light text-center">
+                        <a [routerLink]="[backUrl]" class="btn btn-secondary clear-form">Cancel</a>
+                        <button type="submit" class="btn btn-primary load-button m-l-10"> 
+                            <a class="submit-blue">	Submit </a>
+                        </button>
+                    </div>
+                  </div>
+                  
+                  </form>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

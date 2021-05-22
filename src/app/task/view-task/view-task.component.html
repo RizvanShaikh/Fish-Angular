@@ -1,0 +1,61 @@
+<div class="content">
+        <header class="page-header">
+            <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <h1 class="separator">View {{pageName | titlecase}}</h1>                    
+                </div>
+                <button type="Back" class="btn btn-primary load-button">
+                    <a [routerLink]="[backUrl]" class=" submit-blue" >Back</a>
+                </button>
+                        
+            </div>
+        </header>
+
+
+        <section class="page-content container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                                           
+                      <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-row">
+                                            <div class="col-md-4"></div>
+                                        <div class="col-md-8 ">
+                                            <div class="">
+                                                <label class="text-center">Task : </label>
+                                                
+                                                <p class="view text-center">{{objectData?.task}}</p>
+                                            </div>
+                                            <div class="">
+                                                    <label class="text-center">Employee :</label>
+                                                    
+                                                    <p class="view text-center">{{objectData?.assignee_info?.full_name}}</p>
+                                            </div>
+                                            <div class="">
+                                                    <label class="text-center">Start Date :</label>
+                                                    
+                                                    <p class="view text-center">{{objectData?.issue_date | date: 'dd/MM/y'}}</p>
+                                            </div>
+                                            <div class="">
+                                                    <label class="text-center">End Date :</label>
+                                                    
+                                                    <p class="view text-center">{{objectData?.due_date | date: 'dd/MM/y'}}</p>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    
+                      </div>
+                                              
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- SIDEBAR QUICK PANNEL WRAPPER -->

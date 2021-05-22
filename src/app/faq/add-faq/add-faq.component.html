@@ -1,0 +1,63 @@
+<div class="content">
+    <header class="page-header">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h1 class="separator">Add {{pageName|titlecase}}</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-content container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+    
+                <form [formGroup]="addForm"  (ngSubmit)="submitForm()" >
+                 
+                  <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-7">
+                                <div class="form-row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Question</label>
+                                            <input [formControl]="addForm.controls['faq_question']"
+                                              class="form-control" 
+                                              type="text" 
+                                              placeholder="Enter Question">
+                                            </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Answer</label>
+                                            
+                                              <textarea [formControl]="addForm.controls['faq_answer']"  
+                                                    class="form-control" cols="30" rows="6">
+                                            </textarea>
+
+
+                                            </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="card-footer bg-light text-center">
+                        <a [routerLink]="[backUrl]" class="btn btn-secondary clear-form">Cancel</a>
+                        <button type="submit" class="btn btn-primary load-button m-l-10"> 
+                            <a class="submit-blue">	Submit </a>
+                        </button>
+                    </div>
+                  </div>
+                  
+                  </form>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

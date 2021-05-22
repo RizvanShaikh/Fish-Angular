@@ -1,0 +1,30 @@
+<!-- <div class="form-group">
+
+    <div class="input-group">
+        <div class="custom-file">
+            <input type="file" name="image" class="custom-file-input" id="inputGroupFile01"
+                (change)="fileProgress($event)" aria-describedby="inputGroupFileAddon01">
+            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        </div>
+    </div>
+</div>
+
+<div class="image-preview mb-3" *ngIf="previewUrl">
+    <img [src]="previewUrl" height="300" />
+</div> -->
+
+<div class="avatar-upload">
+        <div class="avatar-edit">
+            <input (change)="fileProgress($event, imageEle)" type='file' id="imageUpload"  #imageEle accept=".png, .jpg, .jpeg" />
+            <label for="imageUpload">
+                <i class="zmdi zmdi-edit zmdi-hc-fw" style="margin-top: 7px;"></i>
+            </label>
+        </div>
+        <div class="avatar-preview">
+            <div id="imagePreview"
+                class=" img-thumbnail rounded-circle"
+                [style.background-image] = "'url('+(previewUrl)+')'"
+                >
+            </div>
+        </div>
+    </div>

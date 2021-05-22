@@ -1,0 +1,68 @@
+
+<div class="content">
+        <header class="page-header">
+            <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <h1 class="separator">{{pageName|titlecase}}</h1>
+                </div>		
+
+                        <div class="ml-0 ml-sm-3 mt-3 mt-sm-0 d-sm-inline-block">
+                                <a (click)="goBack()" class="btn btn-secondary clear-form">Back</a>
+                        </div>
+
+            </div>
+        </header>
+        <section class="page-content container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                    
+                        
+                        <div class="card">
+                        <div class="card-body">
+                       
+                        
+                            <div class="row">
+                                
+                                <ng-container *ngFor="let permObj of availablePermissionList">
+                                        <div class="col-md-6">
+                                                <div class="form-group module-box" style="border: 1px solid #736cc7; border-radius: 5px; padding: 5px; padding: 11px 11px 11px 15px;">
+                                                
+                                                    <h3>{{permObj.key|titlecase}}</h3>
+                                                    <div  *ngIf="permObj.value" class="custom-control custom-checkbox custom-control-inline checkbox-primary">
+                                                        <input (change)="onAllSelect(permObj)"  [(ngModel)]="permObj.all_selected" type="checkbox" id="{{permObj.key}}" name="{{permObj.key}}" class="custom-control-input">
+                                                        <label class="custom-control-label" for="{{permObj.key}}">All</label>
+                                                    </div>
+
+                                                    <ng-container  *ngFor="let obj of permObj.value">
+                                                            <div class="custom-control custom-checkbox custom-control-inline checkbox-primary">
+                                                                    <input type="checkbox"  (change)="onPermSelect(permObj)" [(ngModel)]="obj.selected"  id="{{obj.name}}-{{obj.id}}" name="{{obj.name}}-{{obj.id}}" class="custom-control-input">
+                                                                    <label class="custom-control-label" for="{{obj.name}}-{{obj.id}}">{{obj.name|titlecase}}</label>
+                                                                </div>
+                                                    </ng-container>
+
+                                                                                      
+                                                </div>
+                                            </div>
+                                </ng-container>
+
+
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-light text-center">
+                            <a (click)="goBack()" class="btn btn-secondary clear-form">Cancel</a>
+                            <button (click)="updatePermission()" type="button" class="btn btn-primary load-button"> 
+                                	Submit 
+                            </button>
+                        </div>
+     
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>

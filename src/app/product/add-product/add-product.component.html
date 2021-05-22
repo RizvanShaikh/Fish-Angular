@@ -1,0 +1,178 @@
+<div class="content">
+    <header class="page-header">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h1 class="separator"> {{isEditing? 'Edit' :'Add' }} {{pageName|titlecase}}</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-content container-fluid">
+        <div class="row">
+            <div class="col-12">
+
+
+                    <form [formGroup]="addForm" (ngSubmit)="submitForm()" accept-charset="UTF-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="form-row">
+                                            <div class="col-md-12">
+
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 text-center">
+
+
+                                                            <app-image-input [previewUrl]="previewUrl|imageUrl"
+                                                                (fileChangeEvent)="onFileChangeEvent($event)">
+                                                            </app-image-input>
+
+
+
+                                                        </div>
+                                                        <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+
+                                                            <div class="form-group">
+                                                                <label for="">Product Name</label>
+                                                                <input [formControl]="addForm.controls['product_title']"
+                                                                    class="form-control" type="text"
+                                                                    placeholder="Enter product">
+
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label>Price</label>
+                                                                <input [formControl]="addForm.controls['price']"
+                                                                    class="form-control" type="text" placeholder="Price">
+                                                            </div>
+
+
+                                                            <!-- <div class="row">
+                                                                <div class="form-group col-md-6 col-xs-6">
+                                                                    <label for="">Original Price</label>
+                                                                    <input [formControl]="addForm.controls['price']"
+                                                                        class="form-control" type="text"
+                                                                        placeholder="Price">
+                                                                </div>
+                                                                <div class="form-group col-md-6 col-xs-6">
+                                                                    <label for="">Discounted Price</label>
+                                                                    <input [formControl]="addForm.controls['price']"
+                                                                        class="form-control" type="text"
+                                                                        placeholder="Price">
+                                                                </div>
+
+                                                            </div> -->
+
+                                                            <div class="form-group">
+                                                                <label>Glace:</label>
+                                                                <input [formControl]="addForm.controls['glace']"
+                                                                    class="form-control" type="text" placeholder="%OOF">
+                                                            </div>
+
+
+                                                            <div class="form-group">
+                                                                <label>Category</label>
+                                                                <ng-select class="custom"
+                                                                    [formControl]="addForm.controls['category_id']"
+                                                                    [items]="categoryDropdown" bindValue="id"
+                                                                    bindLabel="title"
+                                                                    (change)="clearSubcategory();updateAvailableSubcategoryDropdown()"
+                                                                    placeholder="Select category">
+                                                                </ng-select>
+
+                                                            </div>
+
+
+                                                            <div class="form-group">
+                                                                <label>Sub Category</label>
+                                                                <ng-select class="custom"
+                                                                    [formControl]="addForm.controls['subcategory_id']"
+                                                                    [items]="availableSubcategoryDropdown"
+                                                                    bindValue="id" bindLabel="title"
+                                                                    placeholder="Select subategory">
+                                                                </ng-select>
+
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label>Size</label>
+                                                                <ng-select class="custom"
+                                                                    [formControl]="addForm.controls['sizes']"
+                                                                    [items]="sizeDropdown"
+                                                                    [multiple]="true"
+
+                                                                    bindValue="id" bindLabel="title"
+                                                                    placeholder="Select size">
+                                                                </ng-select>
+
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label>Importing:</label>
+                                                                <ng-select class="custom"
+                                                                    [formControl]="addForm.controls['importing_id']"
+                                                                    [items]="importingDropdown" bindValue="id"
+                                                                    bindLabel="title" placeholder="Select importing">
+                                                                </ng-select>
+                                                                <span class="for_country_code"></span>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label>Type:</label>
+                                                                <ng-select class="custom"
+                                                                    [formControl]="addForm.controls['type_id']"
+                                                                    [items]="typeDropdown" bindValue="id"
+                                                                    bindLabel="title" placeholder="Select type">
+                                                                </ng-select>
+                                                                <span class="for_country_code"></span>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label>Description :</label>
+
+                                                                <textarea type="textarea" class="form-control"
+                                                                    placeholder="Enter Description" [formControl]="addForm.controls['description']"> </textarea>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label>Extra Note:</label>
+
+                                                                <textarea type="textarea"
+                                                                    class="form-control extra-notes"
+                                                                    placeholder="Enter your Notes" [formControl]="addForm.controls['extra_note']"> </textarea>
+                                                            </div>
+
+
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="card-footer bg-light text-center">
+                                <a [routerLink]="[backUrl]" class="btn btn-secondary clear-form">Cancel</a>
+
+                                <button type="submit" class="btn btn-primary load-button m-l-10"> 
+                                    <a class="submit-blue">Submit</a>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                    </form>
+            </div>
+        </div>
+    </section>
+
+</div>

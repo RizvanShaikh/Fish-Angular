@@ -1,0 +1,116 @@
+<div class="content">
+    <header class="page-header">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h1 class="separator">Add {{pageName|titlecase}}</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-content container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+
+                    <form [formGroup]="addForm" (ngSubmit)="submitForm()">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-7">
+
+
+
+
+
+                                        
+                                                <div class="form-row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                    <label>Image</label>                                           
+                                                                    <app-image-input [previewUrl]="previewUrl" (fileChangeEvent)="onFileChangeEvent($event)">
+                                                                    </app-image-input> 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                        <div class="form-row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Title</label>
+                                                    <input [formControl]="addForm.controls['title']"
+                                                        class="form-control" type="text" placeholder="Enter Title">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Image Type</label>
+
+                                                    <ng-select  
+                                                    [formControl]="addForm.controls['image_type']"
+                                                    [items] = "imageTypeDropdown"
+                                                    bindValue = "value"
+                                                    bindLabel = "label"
+                                                    placeholder="Select Image Type"
+                                                    >
+                                                    </ng-select>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Image Key</label>
+                                                    <input [formControl]="addForm.controls['image_key']"
+                                                        class="form-control" type="text" placeholder="Enter Image Key">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="form-row">
+                                            <div class="col-md-12">
+
+
+                                                <div class="form-group">
+                                                    <label>Description</label>
+                                                    <textarea type="textarea" class="form-control"
+                                                        placeholder="Enter Description"
+                                                        [formControl]="addForm.controls['description']">
+                                        </textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-footer bg-light text-center">
+                                <a [routerLink]="[backUrl]" class="btn btn-secondary clear-form">Cancel</a>
+                                <button type="submit" class="btn btn-primary load-button m-l-10">
+                                    <a class="submit-blue"> Submit </a>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

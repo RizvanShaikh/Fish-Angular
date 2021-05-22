@@ -1,0 +1,118 @@
+<div class="content">
+
+    <header class="page-header">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h1 class="separator"> {{isEditing? 'Edit' :'Add' }} {{pageName|titlecase}}</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-content container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+
+
+                    <form [formGroup]="addForm" (ngSubmit)="submitForm()" accept-charset="UTF-8">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-7">
+                                        <div class="form-row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Task</label>
+                                                    <textarea [formControl]="addForm.controls['task']"  
+                                                    class="form-control" cols="30" rows="6">
+                                                    </textarea>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Select Salesman</label>
+                                                    <ng-select class="custom"
+                                                       [formControl]="addForm.controls['assignee_id']"
+                                                       [items]="salesmanDropdown" 
+                                                       bindValue="id" bindLabel="first_name" 
+                                                       (change)="onSalesmanChange()"
+                                                       placeholder="Select salesman">
+                                                    </ng-select>
+                                                </div>
+
+
+
+                                                <form class="picker-form">
+
+                                                    <div class="form-group row">
+
+                                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="input-group date dp-years">
+
+                                                                        <input type="text"
+                                                                                 placeholder="Issue Date"
+                                                                                 class="form-control"
+                                                                                 placeholder="DD/MM/YYYY"
+                                                                                 #issueDateInput
+                                                                                 [formControl]="addForm.controls['issue_date']"
+                                                                                 bsDatepicker
+                                                                                 [bsConfig]="bsConfig"
+                                                                                 [minDate] = "iMinDate"
+                                                                                 >
+                                                                    
+                                                                        <span class="input-group-addon action">
+                                                                            <i class="icon dripicons-calendar"></i>
+                                                                        </span>
+                                                                    </div>
+
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                           
+
+                                                            <div class="input-group date dp-years">
+
+                                                                    <input type="text"
+                                                                             placeholder="Due Date"
+                                                                             class="form-control"
+                                                                             placeholder="DD/MM/YYYY"
+                                                                             #dueDateInput
+                                                                             [formControl]="addForm.controls['due_date']"
+                                                                             bsDatepicker
+                                                                             [bsConfig]="bsConfig"
+                                                                             [minDate] = "dMinDate"
+                                                                             >
+                                                                
+                                                                    <span class="input-group-addon action">
+                                                                        <i class="icon dripicons-calendar"></i>
+                                                                    </span>
+                                                                </div>
+
+
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card-footer bg-light text-center">
+                                <a [routerLink]="[backUrl]" class="btn btn-secondary clear-form">Cancel</a>
+                                <button type="submit" class="btn btn-primary load-button m-l-10">
+                                    <a class="submit-blue"> Submit </a>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

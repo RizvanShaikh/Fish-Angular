@@ -1,0 +1,119 @@
+<div class="content">
+    <header class="page-header">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h1 class="separator">View {{pageName | titlecase}}</h1>
+            </div>
+            <button type="Back" class="btn btn-primary load-button">
+                <a [routerLink]="[backUrl]" class=" submit-blue">Back</a>
+            </button>
+
+        </div>
+    </header>
+    <!-- table starts -->
+
+    <!-- table Ends -->
+    <section class="page-content container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 text-center">
+                                    <div class="avatar-upload">
+                                        <div class="avatar-preview">
+                                            <div id="imagePreview" class=" img-thumbnail rounded-circle"
+                                                [style.background-image]="'url('+(objectData?.image_url)+')'">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                                    <div class="form-row">
+                                        <div class="col-md-12">
+
+                                            <label class="">Product Name :</label>
+
+                                            <p class="view "> {{objectData?.title}}</p>
+
+
+                                        </div>
+
+                                        <div class="col-md-12 ">
+
+
+                                            <label class="">Category :</label>
+
+                                            <p class="view ">{{objectData?.category_title}}</p>
+
+                                        </div>
+
+                                        <div class="col-md-12 ">
+
+
+                                            <label class="">Subcategory :</label>
+
+                                            <p class="view ">{{objectData?.subcategory_title}}</p>
+                                        </div>
+                                        <div class="col-md-12 ">
+
+
+                                            <label class="">Description :</label>
+
+                                            <p class="view ">{{objectData?.description}}. </p>
+                                        </div>
+                                        <div class="col-md-12 ">
+
+
+                                            <label class="">Price :</label>
+
+                                            <p class="view ">$ {{objectData?.price}}</p>
+                                        </div>
+                                        <!-- <div class="col-md-12 ">
+
+
+                                                <label class="">Discounted Price :</label>
+
+                                                <p class="view ">${{objectData?.title}}</p>
+                                            </div> -->
+                                        <div class="col-md-12 ">
+
+
+                                            <label class="">Glace :</label>
+
+                                            <p class="view ">{{objectData?.glace}}</p>
+                                        </div>
+
+                                        <div class="col-md-12 ">
+
+
+                                            <label class="">Extra Note :</label>
+
+                                            <p class="view ">{{objectData?.extra_note}}</p>
+                                        </div>
+                                        <div class="col-md-12 ">
+
+
+                                            <label class="">Importing :</label>
+
+                                            <p class="view">{{objectData?.importing_title}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+</div>

@@ -1,0 +1,47 @@
+<div class="content">
+    <header class="page-header">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h1 class="separator">{{pageName | titlecase}}</h1>                    
+            </div>
+            <button type="Back" class="btn btn-primary load-button">
+                <a [routerLink]="['update']" class=" submit-blue" >Update</a>
+            </button>
+                    
+        </div>
+    </header>
+
+
+    <section class="page-content container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                                       
+                  <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="row">
+                                    
+                                        <ng-container *ngFor="let obj of objectData">
+                                                <div class="col-md-6">
+                                                        <label class="text-center">{{obj.name | titlecase}} : &nbsp; </label>
+                                                        
+                                                        <p class="view text-center">{{obj?.value}}</p>
+                                                    </div>
+                                        </ng-container>
+
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                
+                  </div>
+                                          
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- SIDEBAR QUICK PANNEL WRAPPER -->

@@ -1,0 +1,16 @@
+<div>
+        <ng-container *ngIf="obj.is_active; else inActive">
+                <a (click)="changeStatus()">
+                        <span class="badge badge-pill badge-success">Active</span> 
+                </a>
+        </ng-container>
+    
+        <ng-template #inActive>
+        <a (click)="changeStatus()">
+            <span class="badge badge-pill badge-danger">Inactive</span> 
+        </a>
+        </ng-template>
+    
+    </div>
+    
+    

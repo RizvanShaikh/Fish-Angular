@@ -1,0 +1,13 @@
+<form (ngSubmit)="getSearch(search.value)">
+    <div class="d-inline-block align-items-centers">
+        <div class="input-group">
+            <input type="text" #search name="search" [value]="searchText" class="form-control"
+                placeholder="Search">
+            <div class="input-group-append">
+                <button type="submit" class="input-group-text pointer">
+                    <span class="icon dripicons-search"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,43 @@
+<div class="content">
+    <header class="page-header">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h1 class="separator">My Profile</h1>
+            </div>
+        
+            <div class="m-l-10">
+                <a class="btn btn-primary" [routerLink]="['/auth/profile/update']">
+                    Edit Profile
+                </a>
+            </div>	
+                    
+        </div>
+    </header>
+    <section class="page-content container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <div class="media d-user align-items-center">
+                    <div class="media-body">
+                        <div class="row">
+                                <div class=" col-lg-2 col-md-2 col-xs-12 text-center thumb-xl member-thumb m-b-10 center-block">
+                                        <img src="{{currentUser.image || 'assets/img/avatars/user.png'}}" class="rounded-circle img-thumbnail" alt="profile-image">
+                                    </div>	
+                            <div class="col-lg-10 col-md-10 col-xl-10 col-xs-12">
+                                    
+                                <ul class="list-unstyled text-left row mb-0 text-center">
+                                    <!-- <li class="mb-0 col-md-6 text-info"><label class="text-muted mb-1 text-info"> <h1> admin</h1>	</label><br></li> -->
+                                    <li class="mb-0 col-md-6">
+                                            <h2 class="mt-0 mb-3 mt-3 ml-10 text-info text-center">{{currentUser.full_name}}</h2>
+                                        <label class="text-muted mb-1">Email</label><br>{{currentUser.email}}</li>
+                                    <li class="mb-0 mt-20 col-md-6">
+                                            
+                                        <label class="text-muted mt-mobile-58">Mobile Number</label><br> {{currentUser.contact_number}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

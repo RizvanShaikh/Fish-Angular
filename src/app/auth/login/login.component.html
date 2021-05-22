@@ -1,0 +1,38 @@
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="sign-in-form">
+        <div class="card">
+            <div class="card-body">
+                <a href="index.html" class="brand text-center d-block m-b-20">
+                    <img src="assets/img/qt-logo_2x.png" alt="QuantumPro Logo" />
+                </a>
+                <h5 class="sign-in-heading text-center m-b-20">Sign in to your account</h5>
+
+                <!-- <app-form-errors [formErrors]="formErrors"  [apiError]="apiError"></app-form-errors> -->
+
+                <div class="form-group">
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input  [formControl]="loginForm.controls['email']" type="email" id="inputEmail" class="form-control"
+                        placeholder="Email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input [formControl]="loginForm.controls['password']" type="password" id="inputPassword"
+                        class="form-control" placeholder="Password">
+                </div>
+                <div class="checkbox m-b-10 m-t-20">
+                    <div class="custom-control custom-checkbox checkbox-primary form-check">
+                        <!-- <input type="checkbox" class="custom-control-input" id="stateCheck1" checked=""> -->
+                        <!-- <label class="custom-control-label" for="stateCheck1">	Remember me</label> -->
+                    </div>
+                    <a [routerLink]="['/auth/forgot-password']" class="float-right">Forgot Password?</a>
+                </div>
+                <button class="btn btn-primary btn-rounded btn-floating btn-lg btn-block" type="submit">
+                    Sign In
+                </button>
+                <!-- <p class="text-muted m-t-25 m-b-0 p-0">Don't have an account yet?<a href="auth.register.html"> Create an account</a></p> -->
+            </div>
+
+        </div>
+    </form>
+</div>

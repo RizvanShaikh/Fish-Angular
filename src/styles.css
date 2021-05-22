@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+/* @import "~@ng-select/ng-select/themes/material.theme.css"; */
+
+
+/* input.ng-invalid.ng-dirty {
+    border: 1px solid red;
+  } */
+
+
+selection--multiple, .has-error .select2-container--default:not(.select2-container--open) .select2-selection--single, .has-error .ng-select .ng-select-container {
+    border-color: #ff5c75;
+}
+
+.has-error .mat-input-element {
+    border: 1px solid #ff5c75 !important;
+}
+
+form.submitted input.ng-invalid, input.ng-dirty.ng-invalid, form.submitted ng2-flatpickr.ng-invalid, ng2-flatpickr.ng-dirty.ng-invalid, form.submitted .ng-select.ng-invalid .ng-select-container, .ng-select.ng-dirty.ng-invalid .ng-select-container {
+    border: 1px solid #ff5c75;
+}
+
+.text-danger {
+    color: red
+}
+
+p.help.is-danger {
+    color: #ff5c75;
+}

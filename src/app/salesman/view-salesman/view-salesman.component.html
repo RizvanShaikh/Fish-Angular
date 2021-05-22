@@ -1,0 +1,94 @@
+<div class="content">
+    <header class="page-header">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h1 class="separator">View {{pageName | titlecase}}</h1>
+            </div>
+            <button type="Back" class="btn btn-primary load-button">
+                <a [routerLink]="[backUrl]" class=" submit-blue">Back</a>
+            </button>
+
+        </div>
+    </header>
+    <!-- table starts -->
+
+    <!-- table Ends -->
+    <section class="page-content container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 text-center">
+                                            <div class="avatar-upload">
+                                                <div class="avatar-preview">
+                                                    <div id="imagePreview" class=" img-thumbnail rounded-circle"
+                                                        [style.background-image]="'url('+(objectData?.image_url)+')'">
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                        <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                                            <div class="form-row">
+                                                <div class="col-md-12 ">
+
+                                                    <label class="">Salesman Id:</label>
+
+                                                    <p class="view ">{{objectData?.id}}</p>
+
+
+                                                </div>
+
+                                                <div class="col-md-12 ">
+
+
+                                                    <label class="">Name :</label>
+
+                                                    <p class="view ">{{objectData?.full_name}}</p>
+
+                                                </div>
+
+                                                <div class="col-md-12 ">
+
+
+                                                    <label class="">Date of Joining :</label>
+
+                                                    <p class="view ">{{objectData?.date_joined | date: 'dd/MM/y'}}</p>
+                                                </div>
+
+                                                <div class="col-md-12 ">
+
+
+                                                    <label class="">Contact Number :</label>
+
+                                                    <p class="view ">{{objectData?.contact_number}}</p>
+                                                </div>
+
+                                                <div class="col-md-12 ">
+
+
+                                                    <label class="">Address :</label>
+
+                                                    <p class="view ">{{objectData?.address}}</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+</section>
+</div>
